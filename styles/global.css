@@ -1,0 +1,130 @@
+body {
+    padding-bottom:60px;
+    font-family: 'Oswald', sans-serif;
+    background-color: #e9e7fd;
+}
+.feather {
+    width: 14px;
+    height: 14px;
+    fill: #eee;
+}
+#gantt {
+    overflow: auto;
+    background-color: #fff;
+}
+.gantt-mainHeader{
+    padding: 30px  0 30px 0;
+    text-align: center;
+}
+#gantt .gantt_container{
+    overflow-y: auto;
+    max-height: calc(100vh - 200px); 
+}
+#gantt .gantt_layout_root {
+    display: flex;
+    border:1px solid #eee;
+}
+
+#gantt .gantt_layout_cell {
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    flex: 1;
+    position: relative;
+    /* min-width: 50%; */
+}
+
+#gantt .gantt_layout_cell .gantt_cell_row {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+#gantt .gantt_layout_cell .gantt_cell_row:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+#gantt .gantt_layout_cell .gantt_cell_row .gantt-header, #gantt .gantt_layout_cell .gantt_cell_row .gantt-date {
+    border-left:1px solid #eee;
+    border-right:1px solid #eee;
+    padding: 10px 15px;
+    flex: 1;
+    text-align: center;
+    text-transform: capitalize;
+    min-width: 150px;
+    font-size: .9rem;
+}
+#gantt .gantt_layout_cell .gantt_cell_row .gantt-date {
+    min-width: 30px;
+    font-size: .9rem;
+}
+#gantt .gantt_layout_cell .gantt_cell_row .gantt-info {
+    height: 22px;
+    line-height: 22px;
+    padding: 11px 15px;
+    font-size: .9rem;
+    font-weight: 400;
+    /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+}
+#gantt .gantt_layout_cell .gantt-indent {
+    display: inline-block;
+}
+#gantt .gantt_layout_cell .gantt_cell_row.gantt_row {
+    position: relative;
+    height: 44px;
+    padding: 0 15px;
+    z-index: 3;
+}
+#gantt .gantt_layout_cell .gantt_bar {
+    height: 20px;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    top: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    will-change: auto;
+    z-index: 4;
+}
+#gantt .gantt_layout_cell .gantt_bar .bar_name {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: .7rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+#gantt .gantt_layout_cell .gantt_bar .bar_progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+#gantt .gantt_layout_cell .gantt_bar.withChildren {
+    background-color: #65c16f;
+}
+#gantt .gantt_layout_cell .gantt_bar.noChildren {
+    background-color: #0370e5;
+}
+#gantt .gantt_layout_cell .gantt_bar.withChildren .bar_progress {
+    background-color: #3c9445;
+}
+#gantt .gantt_layout_cell .gantt_bar.noChildren .bar_progress{
+    background-color: #134376;
+}
+
+#gantt .gantt_layout_cell .gantt_svg {
+    width: 100%;
+    height: calc(100% - 50px);
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 2;
+}
