@@ -1,4 +1,3 @@
-// import taskData from './data';
 import taskData from './data.js';
 const data  = taskData.data;
 const links = taskData.links;
@@ -185,20 +184,10 @@ class gantt {
         bar_name.innerHTML += `
             <span>${name}</span>
         `;
-        // for (let i = 600; i < (gantt_bar.offsetWidth - 300); i = i + 600 ) {
-        //     bar_name.innerHTML += `
-        //         <span style='min-width: 500px'>${name}</span>
-        //     `
-        // }
 
         // appending elements
         gantt_bar.appendChild(bar_name);
         gantt_bar.appendChild(bar_progress);
-
-        // ganttRow.innerHTML = `<div class='gantt_bar ${state}' style='left: ${leftPos}%; width: ${width}%'>
-        //     <span class='bar_name'>${name}</span>
-        //     <span class='bar_progress' style='width: ${progress}%'></span>
-        // </div>`;
 
         this.dragBars();
     }
@@ -267,26 +256,7 @@ class gantt {
                     L ${linkEndX - 3}, ${linkEndY + 3}"/>
             `
             ;
-            // else {
-            //     that.svg.innerHTML += `
-            //         <path 
-            //             stroke="${set.pathColor}" stroke-width="2"
-            //             fill='rgba(0,0,0,0)'
-            //             d="
-            //             M ${linkStartX}, ${linkStartY} 
-            //             L ${linkStartX - 10}, ${linkStartY} 
-            //             L ${linkStartX - 10}, ${linkEndY} 
-            //             L ${linkEndX}, ${linkEndY}"/>
-            //         <path 
-            //             stroke="${set.pathColor}" stroke-width="1"
-            //             fill='rgba(0,0,0,0)'
-            //             d="
-            //             M ${linkEndX - 3}, ${linkEndY - 3}
-            //             L ${linkEndX + 3}, ${linkEndY}
-            //             L ${linkEndX - 3}, ${linkEndY + 3}"/>
-            //     `
-            //     ;
-            // }
+
         }
     }
 
